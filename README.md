@@ -1,6 +1,6 @@
 <div align="center">
 
-# Multi-Modal Language Translator
+# 🌐 Multi-Modal Language Translator
 
 A cross-platform desktop application that translates **Text**, **Speech**, and **Images** offline — built with **Qt/QML + C++** for the GUI and **Python** for the translation engine.
 
@@ -52,8 +52,6 @@ Whether you're decoding a foreign menu, translating a conversation on the fly, o
 
 The application uses a **hybrid Python–C++ architecture**:
 
-<div align="center">
-
 ```
 User Interaction (Qt/QML Frontend)
             │
@@ -69,8 +67,6 @@ User Interaction (Qt/QML Frontend)
             ▼
    Qt/QML GUI (Display Output)
 ```
-
-</div>
 
 **Bridging strategies explored:**
 
@@ -112,30 +108,29 @@ The shipped implementation uses the **`QProcess`-based monolithic approach**, wh
 
 ---
 
-<div align="center">
-
 ## 📂 Project Structure
 
 ```
-├── main.qml                 # Primary QML UI (mode selection, translation, sidebar)
-├── main2.qml                 
-├── ReportPage.qml            # "Report an Issue" page
+Multimodel-Language-Translator-with-GUI/
+├── main.qml                        # Primary QML UI (mode selection, translation, sidebar)
+├── main2.qml
+├── ReportPage.qml                  # "Report an Issue" page
 ├── RecentTranslationsPage.qml
 ├── SocialMediaButton.qml
 ├── translator.cpp / translator.h   # C++ <-> Python bridge (QProcess)
-├── database.py               # SQLite3 wrapper for translation history
-├── translator.py             # Python translation engine (text/speech/image modes)
-├── resources.qrc / qml.qrc    # Qt resource files
-└── tra.pro                   # Qt project file
+├── database.py                     # SQLite3 wrapper for translation history
+├── translator.py                   # Python translation engine (text/speech/image modes)
+├── resources.qrc / qml.qrc         # Qt resource files
+└── tra.pro                         # Qt project file
 ```
-
-</div>
 
 ---
 
 <div align="center">
 
 ## ⚙️ How It Works
+
+</div>
 
 ### 1. Text Translation
 ```
@@ -151,8 +146,6 @@ Microphone Input → SpeechRecognition (Speech-to-Text) → Argos Translate → 
 ```
 Image Upload → OpenCV (Preprocessing) → EasyOCR (Text Extraction) → Argos Translate → Translated Output
 ```
-
-</div>
 
 All translations are automatically saved to a local **SQLite3 database** and can be viewed or cleared from the sidebar.
 
