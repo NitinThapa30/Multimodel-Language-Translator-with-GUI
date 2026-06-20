@@ -1,4 +1,6 @@
-# 🌐 Multi-Modal Language Translator
+<div align="center">
+
+# Multi-Modal Language Translator
 
 A cross-platform desktop application that translates **Text**, **Speech**, and **Images** offline — built with **Qt/QML + C++** for the GUI and **Python** for the translation engine.
 
@@ -6,11 +8,17 @@ A cross-platform desktop application that translates **Text**, **Speech**, and *
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-blue)
 ![License](https://img.shields.io/badge/license-Academic%20Project-lightgrey)
 
-> 🔗 Repo: [Multimodel-Language-Translator-with-GUI](https://github.com/NitinThapa30/Multimodel-Language-Translator-with-GUI)
+🔗 [**View Repository**](https://github.com/NitinThapa30/Multimodel-Language-Translator-with-GUI)
+
+</div>
 
 ---
 
+<div align="center">
+
 ## 📖 Overview
+
+</div>
 
 Language is the bridge that connects people, cultures, and ideas — but it can also be a barrier. The **Multi-Modal Language Translator** breaks that barrier by combining **text, speech, and image-based translation** into a single, offline-capable desktop application with a sleek, modern UI.
 
@@ -18,7 +26,11 @@ Whether you're decoding a foreign menu, translating a conversation on the fly, o
 
 ---
 
+<div align="center">
+
 ## ✨ Features
+
+</div>
 
 - 📝 **Text-to-Text Translation** — type and translate instantly
 - 🎙️ **Speech-to-Text Translation** — speak and get translated text
@@ -32,9 +44,15 @@ Whether you're decoding a foreign menu, translating a conversation on the fly, o
 
 ---
 
+<div align="center">
+
 ## 🏗️ Architecture
 
+</div>
+
 The application uses a **hybrid Python–C++ architecture**:
+
+<div align="center">
 
 ```
 User Interaction (Qt/QML Frontend)
@@ -52,18 +70,29 @@ User Interaction (Qt/QML Frontend)
    Qt/QML GUI (Display Output)
 ```
 
+</div>
+
 **Bridging strategies explored:**
+
+<div align="center">
+
 | Approach | Description |
 |---|---|
 | **Pybind11** | Wraps Python functions as native C++ callable modules |
 | **Monolithic (IPC/Process-based)** | C++ launches Python as a subprocess via `QProcess`, exchanging data via stdout/stdin |
 | **Qt/QML → C++ → Python** | C++ acts as an intermediary layer between the QML frontend and Python backend |
 
+</div>
+
 The shipped implementation uses the **`QProcess`-based monolithic approach**, where C++ spawns `translator.py` with mode-specific arguments and parses its output.
 
 ---
 
+<div align="center">
+
 ## 🛠️ Tech Stack
+
+</div>
 
 ### Frontend (GUI)
 - **Qt Framework** (C++ + QML)
@@ -83,6 +112,8 @@ The shipped implementation uses the **`QProcess`-based monolithic approach**, wh
 
 ---
 
+<div align="center">
+
 ## 📂 Project Structure
 
 ```
@@ -98,7 +129,11 @@ The shipped implementation uses the **`QProcess`-based monolithic approach**, wh
 └── tra.pro                   # Qt project file
 ```
 
+</div>
+
 ---
+
+<div align="center">
 
 ## ⚙️ How It Works
 
@@ -117,11 +152,17 @@ Microphone Input → SpeechRecognition (Speech-to-Text) → Argos Translate → 
 Image Upload → OpenCV (Preprocessing) → EasyOCR (Text Extraction) → Argos Translate → Translated Output
 ```
 
+</div>
+
 All translations are automatically saved to a local **SQLite3 database** and can be viewed or cleared from the sidebar.
 
 ---
 
+<div align="center">
+
 ## 🚀 Getting Started
+
+</div>
 
 ### Prerequisites
 - Qt Creator (Qt 5.15+ recommended) with QML support
@@ -143,17 +184,25 @@ All translations are automatically saved to a local **SQLite3 database** and can
 
 ---
 
+<div align="center">
+
 ## 🖥️ Screenshots
 
 | Light Mode | Dark Mode |
 |---|---|
 | Clean, minimal text translation interface | Sidebar with recent translations & language facts |
 
+</div>
+
 *(See the full project report for detailed UI walkthroughs — front page, sidebar, recent translations, image/speech modes, credits, and issue reporting.)*
 
 ---
 
+<div align="center">
+
 ## ⚠️ Limitations
+
+</div>
 
 - Translation accuracy depends on Argos Translate's offline models (may struggle with idioms/complex sentences)
 - OCR accuracy varies with image quality, fonts, and resolution
@@ -164,7 +213,11 @@ All translations are automatically saved to a local **SQLite3 database** and can
 
 ---
 
+<div align="center">
+
 ## 🔮 Future Improvements
+
+</div>
 
 - Real-time/live translation mode
 - Expanded language support
@@ -173,6 +226,8 @@ All translations are automatically saved to a local **SQLite3 database** and can
 - Enhanced data privacy and local-only audio handling
 
 ---
+
+<div align="center">
 
 ## 👥 Contributors
 
@@ -186,14 +241,24 @@ All translations are automatically saved to a local **SQLite3 database** and can
 **Institution:** GRD Institute of Polytechnic, Rajpur, Dehradun, Uttarakhand
 **Department:** Computer Science & Engineering
 
+</div>
+
 ---
 
+<div align="center">
+
 ## 🙏 Acknowledgements
+
+</div>
 
 Built with gratitude to the open-source community behind **Qt**, **Argos Translate**, **EasyOCR**, **OpenCV**, and **SQLite3** — whose tools made offline, multimodal translation possible.
 
 ---
 
+<div align="center">
+
 ## 📄 License
 
 This project was developed as an academic minor project. Feel free to explore, learn from, and build upon it for educational purposes.
+
+</div>
