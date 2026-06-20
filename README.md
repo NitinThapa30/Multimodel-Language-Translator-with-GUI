@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🌐 Multi-Modal Language Translator
+#  Multi-Modal Language Translator
 
 A cross-platform desktop application that translates **Text**, **Speech**, and **Images** offline — built with **Qt/QML + C++** for the GUI and **Python** for the translation engine.
 
@@ -48,7 +48,7 @@ Whether you're decoding a foreign menu, translating a conversation on the fly, o
 
 ## 🏗️ Architecture
 
-</div>
+
 
 The application uses a **hybrid Python–C++ architecture**:
 
@@ -67,6 +67,7 @@ User Interaction (Qt/QML Frontend)
             ▼
    Qt/QML GUI (Display Output)
 ```
+</div align="center">
 
 **Bridging strategies explored:**
 
