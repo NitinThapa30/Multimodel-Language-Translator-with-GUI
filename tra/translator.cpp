@@ -1,5 +1,6 @@
 #include "translator.h"
 #include <QDebug>
+#include <QCoreApplication>
 
 Translator::Translator(QObject *parent) : QObject(parent)
 {
@@ -38,17 +39,34 @@ Translator::Translator(QObject *parent) : QObject(parent)
 
 void Translator::runPythonScript(const QStringList &arguments)
 {
-    QString program = "python";  // Change to "python3" if needed in your environment
+    QString scriptPath = QCoreApplication::applicationDirPath() + "/translator.py";
+
+    // Try 'py' launcher with '-3' first (common on Windows)
+    QString program = "py";
     QStringList args;
-    args << "C:/Users/HP/Documents/tra/translator.py" << arguments;  // Full path to the Python script
+    args << "-3" << scriptPath << arguments;
 
-    qDebug() << "Running Python script with arguments:" << args;
-
+    qDebug() << "Running Python script with program 'py' and args:" << args;
     m_process.start(program, args);
 
     if (!m_process.waitForStarted()) {
-        qDebug() << "Failed to start Python script.";
-        emit errorOccurred("Failed to start Python script");
+        qDebug() << "Failed to start with 'py -3'. Trying 'python'...";
+        program = "python";
+        args.clear();
+        args << scriptPath << arguments;
+        m_process.start(program, args);
+
+        if (!m_process.waitForStarted()) {
+            qDebug() << "Failed to start with 'python'. Trying fallback 'translator.py'...";
+            args.clear();
+            args << "translator.py" << arguments;
+            m_process.start(program, args);
+
+            if (!m_process.waitForStarted()) {
+                qDebug() << "Failed to start Python script. Please ensure Python is installed and available in PATH.";
+                emit errorOccurred("Failed to start Python script. Please ensure Python is installed and available in PATH.");
+            }
+        }
     }
 }
 

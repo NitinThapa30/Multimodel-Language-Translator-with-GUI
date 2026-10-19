@@ -34,6 +34,7 @@ OTHER_FILES += \
 }
 
 TEMPLATE = app
+TARGET = bhasha
 
 DISTFILES += \
     Credits.qml \
